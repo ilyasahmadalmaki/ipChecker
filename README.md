@@ -5,16 +5,9 @@ Tool to check if a given IP is a node tor or an open proxy.
 Sometimes all your throttles are not enough to stop brute force attacks or any kind of massive attacks, so it can help you to drop, some attackers who use tor or open proxies.
 
 # How it works
-The ipChecker has some plugins which scrap proxies ips from public sites, all this ip's are stored in a database where you can make consults using the provided API.
-
-Basically, when you run the command ```make run``` it will start docker swarm create one service for the API wich can be escaleted and starts with 4 containers, another service for the updater which is the script responsible to run all the plugins that grab all the proxies and tor nodes,this service starts with only one container, and at last  one container for the mongodb where all data are stored.
-
-The containers communicate through a docker network called ipchecker-network, and only the port 8080 is exposed where you consume the API.
-
-To avoid a lot of false positive, the api only returns ip's from the curent day, because almost proxies servers and tor nodes, are dynamic ip's. 
+IPChecker memiliki beberapa plugin yang memotong proksi ips dari situs publik, semua ip ini disimpan dalam database di mana Anda dapat berkonsultasi dengan menggunakan API yang disediakan. Pada dasarnya, ketika Anda menjalankan perintah `` `make run``` itu akan mulai buruh pelabuhan membuat satu layanan untuk API yang dapat ditingkatkan dan mulai dengan 4 kontainer, layanan lain untuk pembaru yang merupakan skrip yang bertanggung jawab untuk menjalankan semua plugin yang mengambil semua proxy dan node, layanan ini dimulai dengan hanya satu kontainer, dan akhirnya satu wadah untuk mongodb tempat semua data disimpan. Kontainer berkomunikasi melalui jaringan buruh pelabuhan yang disebut ipchecker-network, dan hanya port 8080 yang terpapar tempat Anda mengonsumsi API. Untuk menghindari banyak false positive, api hanya mengembalikan ip dari hari ini, karena hampir proxy server dan node, adalah ip dinamis.
 
 # Plugins
-Here is the list of working plugins on ipChecker
 
 - cloudproxies.com
 - gatherproxy.com
